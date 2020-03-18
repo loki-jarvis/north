@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { MenuComponent } from './components/MenuComponent';
+import { SECOND_MENU_OPTIONS } from './constants/SECOND_MENU_OPTIONS';
+import { THIRD_MENU_OPTIONS } from './constants/THIRD_MENU_OPTIONS';
+import Grid from '@material-ui/core/Grid';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <React.Fragment>
+    <Grid item xs={12}>
+      <MenuComponent />
+    </Grid>
+<Grid item xs={12}>
+    <MenuComponent
+    options={SECOND_MENU_OPTIONS} />
+</Grid>
+    <Grid item xs={12}>
+    <MenuComponent options={THIRD_MENU_OPTIONS} />
+    </Grid>
+  </React.Fragment>
   );
 }
 
